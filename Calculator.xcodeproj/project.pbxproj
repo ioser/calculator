@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A4B57CC16AD130D00F8E256 /* SCSCalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4B57CB16AD130D00F8E256 /* SCSCalculatorBrain.m */; };
 		9ACFC15516AA7A1500943C55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACFC15416AA7A1500943C55 /* UIKit.framework */; };
 		9ACFC15716AA7A1500943C55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACFC15616AA7A1500943C55 /* Foundation.framework */; };
 		9ACFC15916AA7A1500943C55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACFC15816AA7A1500943C55 /* CoreGraphics.framework */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A4B57CA16AD130D00F8E256 /* SCSCalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSCalculatorBrain.h; sourceTree = "<group>"; };
+		9A4B57CB16AD130D00F8E256 /* SCSCalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSCalculatorBrain.m; sourceTree = "<group>"; };
 		9ACFC15016AA7A1500943C55 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ACFC15416AA7A1500943C55 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9ACFC15616AA7A1500943C55 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,6 +92,8 @@
 				9ACFC16F16AA7A1500943C55 /* SCSViewController.h */,
 				9ACFC17016AA7A1500943C55 /* SCSViewController.m */,
 				9ACFC15B16AA7A1500943C55 /* Supporting Files */,
+				9A4B57CA16AD130D00F8E256 /* SCSCalculatorBrain.h */,
+				9A4B57CB16AD130D00F8E256 /* SCSCalculatorBrain.m */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				9ACFC16116AA7A1500943C55 /* main.m in Sources */,
 				9ACFC16516AA7A1500943C55 /* SCSAppDelegate.m in Sources */,
 				9ACFC17116AA7A1500943C55 /* SCSViewController.m in Sources */,
+				9A4B57CC16AD130D00F8E256 /* SCSCalculatorBrain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +299,7 @@
 				9ACFC17616AA7A1500943C55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
