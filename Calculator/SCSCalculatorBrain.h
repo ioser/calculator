@@ -11,5 +11,10 @@
 @interface SCSCalculatorBrain : NSObject
 
 - (void) enterNumber:(double)numberToEnter;
+//
+// Calculator operations
+//
+- (double) add;
+- (double) substract;
 
 @end

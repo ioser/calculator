@@ -49,7 +49,7 @@
     userIsInTheMiddleOfEnteringANumber = YES;
 }
 
-- (IBAction)digitButtonPressed:(UIButton *)sender {
+- (IBAction)digitButtonTapped:(UIButton *)sender {
     NSString *digitPressed = sender.currentTitle;
     
     if (userIsInTheMiddleOfEnteringANumber) {
@@ -65,19 +65,43 @@
     userIsInTheMiddleOfEnteringANumber = NO;
 }
 
-- (IBAction)enterButtonPressed:(UIButton *)sender {
+- (IBAction)enterButtonTapped:(UIButton *)sender {
     
     double enteredNumber = [self.calculatorDisplay.text doubleValue];
     [self.brain enterNumber:enteredNumber];
     userIsInTheMiddleOfEnteringANumber = NO;
 }
 
-- (IBAction)zeroPressed:(UIButton *)sender {
+- (IBAction)zeroButtonTapped:(UIButton *)sender {
     NSString *digitPressed = sender.currentTitle;
 
     if (userIsInTheMiddleOfEnteringANumber) {
         [self appendDigit:digitPressed];
     }
 }
+
+- (IBAction)addButtonTapped:(UIButton *)sender {
+    [self autoEnter];
+    double result = [self.brain add];
+    [self displayResult:result];
+}
+
+- (IBAction)subtractButtonTapped:(UIButton *)sender {
+    [self autoEnter];
+    double result = [self.brain substract];
+    [self displayResult:result];
+}
+
+- (void)autoEnter {
+    if (userIsInTheMiddleOfEnteringANumber) {
+        [self enterButtonTapped: nil];
+    }
+}
+
+- (void)displayResult:(double)result {
+    NSString *resultString = [NSString stringWithFormat:@"%g", result];
+    self.calculatorDisplay.text = resultString;
+}
+
 
 @end

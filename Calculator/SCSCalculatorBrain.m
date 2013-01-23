@@ -8,6 +8,9 @@
 
 #import "SCSCalculatorBrain.h"
 
+#define ADD_OPERATION @"add"
+#define SUBTRACT_OPERATION @"substract"
+
 @interface SCSCalculatorBrain()
     @property (strong, nonatomic) NSMutableArray *operandStack;
 @end
@@ -35,6 +38,30 @@
 
 - (void)enterNumber:(double)numberToEnter {
     [self pushOperand:numberToEnter];
+}
+
+- (double) add {
+    return [self performBinaryOperation: ADD_OPERATION];
+}
+
+- (double) substract {
+    return [self performBinaryOperation: SUBTRACT_OPERATION];
+}
+
+
+- (double)performBinaryOperation:(NSString *)operation {
+    double result = 0;
+    double rightOperand = [self popOperand];
+    double leftOperand = [self popOperand];
+    
+    if ([operation isEqualToString: ADD_OPERATION]) {
+        result = leftOperand + rightOperand;
+    } else if (([operation isEqualToString: SUBTRACT_OPERATION])) {
+        result = leftOperand - rightOperand;
+    }
+    
+    [self pushOperand:result];
+    return result;
 }
 
 @end
