@@ -17,6 +17,16 @@
 
 @implementation SCSCalculatorBrain
 
+- (id)init {
+    self = [super init];
+    
+    if (self != nil) {
+        _operandStack = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
+}
+
 - (NSMutableArray *) operandStack {
     if (_operandStack == nil) {
         _operandStack = [[NSMutableArray alloc] init];
@@ -26,6 +36,7 @@
 
 - (void)pushOperand:(double)operand {
     [self.operandStack addObject:@(operand)]; // @(expression) creates an NSObject
+    [self logOperandStack];
 }
 
 - (double)popOperand {
@@ -33,7 +44,12 @@
     if (poppedNumber != nil) {
         [self.operandStack removeLastObject];
     }
+    [self logOperandStack];
     return [poppedNumber doubleValue];
+}
+
+- (void)logOperandStack {
+    NSLog(@"The operand stack = %@", self.operandStack);
 }
 
 - (void)enterNumber:(double)numberToEnter {
@@ -61,6 +77,7 @@
     }
     
     [self pushOperand:result];
+    [self logOperandStack];
     return result;
 }
 
