@@ -11,6 +11,8 @@
 @interface SCSCalculatorBrain : NSObject
 
 - (void) enterNumber:(double)numberToEnter;
+- (void) dumpOperandStack;
+
 //
 // Calculator operations
 //

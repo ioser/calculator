@@ -103,5 +103,8 @@
     self.calculatorDisplay.text = resultString;
 }
 
+- (IBAction)dumpStackTapped:(UIButton *)sender {
+	[self.brain dumpOperandStack];
+}
 
 @end

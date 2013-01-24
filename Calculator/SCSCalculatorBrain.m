@@ -64,7 +64,6 @@
     return [self performBinaryOperation: SUBTRACT_OPERATION];
 }
 
-
 - (double)performBinaryOperation:(NSString *)operation {
     double result = 0;
     double rightOperand = [self popOperand];
@@ -80,5 +79,14 @@
     [self logOperandStack];
     return result;
 }
+
+- (void) dumpOperandStack {
+	NSLog(@"--- Top of stack dump.");
+	for (int i = 0; i < [self.operandStack count]; i++) {
+		NSLog(@"%@", [self.operandStack objectAtIndex:i]);
+	}
+	NSLog(@"--- Bottom of stack dump.");
+}
+
 
 @end
